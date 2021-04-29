@@ -7,11 +7,11 @@ const bodyParser = require('body-parser');
 require('dotenv/config');
 
 const authRoute = require('./routes/auth');
-
+const deliveryboyRoute = require('./routes/deliveryboy')
 app.use(bodyParser.json());
 app.use(express.json());
 app.use('/api/user', authRoute);
- 
+ app.use('/deliveryboy',deliveryboyRoute);
 //connect to db
 const mongoUri="mongodb+srv://sulthana:sulthana@crud.xngbi.mongodb.net/sulthana?retryWrites=true&w=majority"
 mongoose.connect(
